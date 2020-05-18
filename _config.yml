@@ -114,6 +114,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/guimorg"
+    - label: LinkedIn
+      icon: "fab fa-fw fa-linkedin-in"
+      url: "https://linkedin.com/in/guilherme-amorim-avilla-gimenez-junior-a319bb113"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -276,7 +279,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments:  true
       share: true
       related: true
   # _pages
