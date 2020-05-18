@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/image/theme-2.jpg"
+  image: "/images/theme-2.jpg"
 ---
 
 I'm a passionate Machine Learning Engineer who loves building components for automating the Data Science Lifecycle. Also a Data Scientist in the free time, always reading new papers about new ML models and applications and sometimes editing kernels on Kaggle.
