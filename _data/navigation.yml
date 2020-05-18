@@ -4,8 +4,10 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/
+  - title: Tags
+    url: /tags/
   - title: "Machine Learning"
-    url: /machine-learning/
+    url: /tags/machine-learning/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
