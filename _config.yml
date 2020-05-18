@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Guilherme de Amorim"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/bio-photo.jpg"
   bio              : "ML_Engineer@MeLi"
   location         : "Sao Paulo, BR"
   email            : "ggimenezjr@gmail.com"
