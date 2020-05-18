@@ -45,7 +45,7 @@ comments:
     issue_term           : # "pathname" (default)
   staticman:
     branch               : "master"
-    endpoint             : # https://guimorg-githubio-pages.herokuapp.com/v2/entry/guimorg/guimorg.github.io/master/comments
+    endpoint             : "https://guimorg-githubio-pages.herokuapp.com/v2/entry/guimorg/guimorg.github.io/master/comments"
 reCaptcha:
   siteKey                :
   secret                 :
