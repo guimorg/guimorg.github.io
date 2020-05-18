@@ -7,4 +7,4 @@ I'm a passionate Machine Learning Engineer who loves building components for aut
 
 Python is my language of choice, but I also love working with Golang. Docker and Kubernetes are two of the tools I'm most comfortable on using to build my applications.
 
-VIM is my editor of choice and I always try on improving my skills using it. Shell Scripting is a must for everyone and I also love automating a few boring stuff for my terminal using it.
+VIM is my editor of choice and I always try on improving my skills using it. Shell Scripting is a must for everyone so I also automate a few boring stuff for my terminal using it.
