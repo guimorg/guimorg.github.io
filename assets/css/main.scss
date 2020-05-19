@@ -6,3 +6,111 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
+
+#comment-form-reply {
+  display: inline;
+}
+
+.comment {
+  @include clearfix();
+  margin: 1em 0;
+  position: relative;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  font-size: 0.9em;
+
+  &:not(:last-child) {
+    border-bottom: 0px solid $border-color;
+  }
+
+  // comment replies
+  &.child {
+    margin-left: 4.5em;
+
+    &:before,
+    &:after {
+      position: absolute;
+      margin-top: 1.2em;
+      left: 27px;
+      content: '';
+      width: 0.5em;
+      background-color: #e3e3e3;
+    }
+
+    &:before {
+      top: -3em;
+      height: 1.8em;
+    }
+
+    &:after {
+      top: 4em;
+      bottom: -1em;
+    }
+  }
+}
+
+.comment__avatar-wrapper {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+
+//  @include breakpoint($large) {
+//    width: 100px;
+//    height: 100px;
+//  }
+
+}
+
+.comment__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+//  @include breakpoint($large) {
+//    width: 80px;
+//    height: 80px;
+//    padding: 5px;
+//    border: 1px solid $border-color;
+//  }
+
+}
+
+.comment__message {
+  margin: 0;
+  margin-left: 80px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.comment__reply {
+  margin: 0;
+  margin-left: 80px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.comment__content-wrapper {
+    /* float:right; */
+  width: calc(100% - 80px);
+
+  @include breakpoint($large) {
+    width: calc(100% - 120px);
+  }
+}
+
+#respond {
+  @include clearfix;
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
