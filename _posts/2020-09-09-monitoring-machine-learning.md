@@ -2,6 +2,7 @@
 title: "Quality for Machine Learning Systems - Part 1"
 date: 2020-09-09
 tags: [general, machine learning, quality]
+toc: true
 header:
   image: "/images/monitoring-machine-learning/theme.jpeg"
 ---
