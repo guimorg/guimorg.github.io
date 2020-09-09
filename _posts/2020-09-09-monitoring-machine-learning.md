@@ -32,7 +32,7 @@ The authors provided not only the decomposition of the System/Application for th
 
 If you have a minimal background on ML, you probably are familiar with the Machine Learning Lifecycle:
 
-![Machine Learning Lifecycle - Luminovo](/images/monitoring-machine-learning/machine-learning-lifecycle.png)
+![Machine Learning Lifecycle - Luminovo](/images/monitoring-machine-learning/machine-learning-lifecycle.jpeg)
 
 We basically have three main stages:
 
