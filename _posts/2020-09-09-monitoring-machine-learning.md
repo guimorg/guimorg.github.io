@@ -20,7 +20,7 @@ We will start the series with a better view of ML Systems and the challenges we 
 
 Before starting, it is nice to have a better understanding of what a ML System is, this will give us a better understanding on the challenges we have for Quality. ML Systems/Applications are very different from traditional systems/applications, because they have extra axis of change, or complexity; a very nice view of this is given by Sato, Wider, and Windheuser (2019) in the CD4ML article:
 
-![ML System - CD4ML - Axis of Change](images/monitoring-machine-learning/ml-axis-of-change.png)
+![ML System - CD4ML - Axis of Change](/images/monitoring-machine-learning/ml-axis-of-change.png)
 
 The authors provided not only the decomposition of the System/Application for their axis of change but also some examples of the changes:
 
@@ -32,7 +32,7 @@ The authors provided not only the decomposition of the System/Application for th
 
 If you have a minimal background on ML, you probably are familiar with the Machine Learning Lifecycle:
 
-![Machine Learning Lifecycle - Luminovo](images/monitoring-machine-learning/machine-learning-lifecycle.png)
+![Machine Learning Lifecycle - Luminovo](/images/monitoring-machine-learning/machine-learning-lifecycle.png)
 
 We basically have three main stages:
 
