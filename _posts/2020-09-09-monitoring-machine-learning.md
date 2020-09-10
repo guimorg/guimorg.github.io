@@ -67,17 +67,17 @@ Another very important thing to keep in mind is that unexpected inputs **will be
 
 Take a look at this example:
 
-"Organization PQR uses ML for some considerable time for performing fraud prevention. Nevertheless, when trying to interpret the model Data Scientists began to notice that one particular feature has a really counterintuitive meaning, and also the performance for the model, across different versions, began to degrade since 9 months ago. Until they found out that one of the features that were being given to the model had a bug and was given unexpected values for some cases."
+"Organization PQR uses ML for some considerable time for performing fraud prevention. Nevertheless, when trying to interpret the model Data Scientists began to notice that one particular feature has a really counterintuitive meaning, and also the performance for the model, across different versions, began to degrade since 9 months ago. Until they found out that one of the features given to the model had a bug and was given unexpected values for some cases."
 
 ### Lots of configuration
 
-Finally, I would like to talk a little bit about configuration issues. As we saw above, in the diagram by Sato, Wider, and Windheuser (2019), a lot of configuration resides inside code files that are stored on your VCS (note that keeping configuration on databases is not really a good practice, introducing errors and making it really hard to keep track). These files probably store lots of configuration: about your model (for training or scoring), about the data, and also about how the model is trained (hyperparameters).
+Finally, I would like to talk a little bit about configuration issues. As we saw above, in the diagram by Sato, Wider, and Windheuser (2019), a lot of configuration resides inside code files that are stored on your VCS (note that keeping configuration on databases is not really a good practice because it introduces errors and makes it really hard to keep track). These files probably store lots of configuration: about your model (for training or scoring), about the data, and also about how the model is trained (hyperparameters).
 
 You can think that this is a very trivial and useless subject, but keeping an eye for quality on configuration files is really important and can be very complex depending on how the configuration file is processed. Also, a simple change on a parameter may pass unnoticed until you see a hole in your system.
 
 One example to serve as a guide:
 
-"In organization XYZ a Data Scientist developed a new version for a particular batch model. The organization maintains a second environment for integration and full end-to-end tests where the models are deployed before production, but the specifications for the environment are different. After passing all tests the model is deployed and fails for all executions, the Data Scientist tries to debug the execution of the model using the previous environment but everything seems to work fine. After involving multiple teams to look for the problem in the production environment they found that one of the parameters on the configuration file still points to the backtesting environment."
+"In organization XYZ a Data Scientist developed a new version for a particular batch model. The organization maintains a second environment for integration and full end-to-end tests where the models are deployed before production, but the specifications for the environments are different. After passing all tests the model is deployed and fails for all executions, the Data Scientist tries to debug the execution of the model using the previous environment but everything seems to work fine. After involving multiple teams to look for the problem in the production environment they found that one of the parameters on the configuration file still points to the backtesting environment."
 
 ## Wrap Up
 
