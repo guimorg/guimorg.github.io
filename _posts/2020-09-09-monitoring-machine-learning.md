@@ -88,8 +88,11 @@ For the next article, we will try to look into testing and four different catego
 ## References
 
 RUBAN, T. **The Deep Learning Toolset — An Overview**. 2018. Available at: https://medium.com/luminovo/the-deep-learning-toolset-an-overview-b71756016c06
-SATO, D. WIDER, A. WINDHEUSER, C. **Continuous Delivery for Machine Learning**. 2019. Available at: https://martinfowler.com/articles/cd4ml.html
-BLASZKA, D. **Dangerous Feedback Loops in ML**. 2019. Available at: https://towardsdatascience.com/dangerous-feedback-loops-in-ml-e9394f2e8f43
-SCULLEY, D. HOLD, G. GOLOVIN, D. DAVYDOV, E. PHILLIPS, T. **Hidden Technical Debt in Machine Learning Systems**. 2015. Available at: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf
-BRECK, E. CAI, S. NIELSEN, E. SALIB, M. SCULLEY, D. **The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction**. 2017. Available at: https://research.google/pubs/pub46555/
 
+SATO, D. WIDER, A. WINDHEUSER, C. **Continuous Delivery for Machine Learning**. 2019. Available at: https://martinfowler.com/articles/cd4ml.html
+
+BLASZKA, D. **Dangerous Feedback Loops in ML**. 2019. Available at: https://towardsdatascience.com/dangerous-feedback-loops-in-ml-e9394f2e8f43
+
+SCULLEY, D. HOLD, G. GOLOVIN, D. DAVYDOV, E. PHILLIPS, T. **Hidden Technical Debt in Machine Learning Systems**. 2015. Available at: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf
+
+BRECK, E. CAI, S. NIELSEN, E. SALIB, M. SCULLEY, D. **The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction**. 2017. Available at: https://research.google/pubs/pub46555/
