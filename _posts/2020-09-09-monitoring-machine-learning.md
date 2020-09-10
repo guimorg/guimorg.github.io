@@ -37,7 +37,7 @@ If you have a minimal background on ML, you probably are familiar with the Machi
 
 We basically have three main stages:
 
-- **Data Collection**: IMO, these are the most important steps on the lifecycle (remember the ML scenario: *"Garbage In, Garbage Out")* You could also add the Feature Engineering step on the diagram above to have a better view of this stage. In the industry, these steps are usually performed by the Data Engineer.
+- **Data Collection**: IMO, these are the most important steps on the lifecycle (remember the ML scenario: *"Garbage In, Garbage Out")*. You could also add the Feature Engineering step on the diagram above to have a better view of this stage. In the industry, these steps are usually performed by the Data Engineer.
 - **Model Training**: these steps relate to building the model, evaluating it, and training it. You could probably add the EDA step outside the model optimizations circle to have a better view. Here we have the role of the Data Scientist that has a good understanding of the *data*, *the business*, and also on the *ML techniques* to be used.
 - **Model Deployment**: finally, we have steps related to deploying the model in the production environment, for making real predictions. These steps are usually performed by the Machine Learning Engineer, although you will find many roles where the Data Engineer also is responsible for deploying the model. You can see that there are some situations where the predictions made by the model actually affect the data that will be used for the next versions of the model or new models.
 
