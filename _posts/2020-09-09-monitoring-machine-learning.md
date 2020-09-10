@@ -1,7 +1,7 @@
 ---
 title: "Quality for Machine Learning Systems - Part 1"
 date: 2020-09-09
-tags: [general, machine learning, quality]
+tags: [machine learning, quality]
 toc: true
 header:
   image: "/images/monitoring-machine-learning/theme.jpeg"
@@ -17,17 +17,17 @@ We will start the series with a better view of ML Systems and the challenges we 
 
 ## About ML Systems
 
-### What is a ML System
+### What is an ML System
 
-Before starting, it is nice to have a better understanding of what a ML System is, this will give us a better understanding on the challenges we have for Quality. ML Systems/Applications are very different from traditional systems/applications, because they have extra axis of change, or complexity; a very nice view of this is given by Sato, Wider, and Windheuser (2019) in the CD4ML article:
+Before starting, it is nice to have a better understanding of what an ML System is, this will give us a better understanding of the challenges we have for Quality. ML Systems/Applications are very different from traditional systems/applications because they have an extra axis of change or complexity; a very nice view of this is given by Sato, Wider, and Windheuser (2019) in the CD4ML article:
 
 ![ML System - CD4ML - Axis of Change](/images/monitoring-machine-learning/ml-axis-of-change.png)
 
 The authors provided not only the decomposition of the System/Application for their axis of change but also some examples of the changes:
 
-- **Data**: this is the *fundamental difference* for ML Systems, the *expected behavior is not given by the application, but by the data*. The examples are evolving schemas, volume and different samplings over time.
-- **Model**: here we have the foundation for learning from data, different statistical techniques and algorithms that allow us to make new predictions. Some examples of changes are different algorithms, multiple experiments and longer training periods.
-- **Code**: the common place in comparison to traditional applications, we have code for: configuring models, different serving scenarios, etc. There may be some changes depending on the business needs, bug fixes and different configurations.
+- **Data**: this is the *fundamental difference* for ML Systems, the *expected behavior is not given by the application, but by the data*. The examples are evolving schemas, volume, and different samplings over time.
+- **Model**: here we have the foundation for learning from data, different statistical techniques, and algorithms that allow us to make new predictions. Some examples of changes are different algorithms, multiple experiments, and longer training periods.
+- **Code**: the commonplace in comparison to traditional applications, we have code for configuring models, different serving scenarios, etc. There may be some changes depending on business needs, bug fixes, and different configurations.
 
 ### The ML Lifecycle
 
