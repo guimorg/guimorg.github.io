@@ -9,90 +9,90 @@ header:
   image: "/images/monitoring-machine-learning/theme.jpeg"
 ---
 
-Lately, one of the key subjects I've been studying and thinking about is Quality for Machine Learning Systems. I remember a couple of years ago when entering the field of ML that I had no idea how to measure quality. By that time, I was writing my first unit tests for web servers and had the first initial view on what quality is for Software in general, but when contemplated with the concept of ML, I had no idea what to look out for. 
+Nos últimos tempos um dos temas principais que tenho estudado e pensado sobre é Qualidade para aplicações e sistemas de Machine Learning. Lembro-me de há alguns poucos anos atrás, quando ingressei na área de ML, que não tinha ideia de como medir qualidade. Naquela época, eu estava começando a escrever meus primeiros testes unitários para aplicações WEB e já tinha uma primeira visão sobre o que era qualidade para Software em geral, mas quando contemplado com o conceito de ML eu não tinha ideia do que pensar ou o que procurar.
 
-In this series of articles, I will try to introduce a little bit about Quality for ML Systems, specifically testing, monitoring, and some tips on situations you will probably encounter in the industry.
+Nesta pequena séries de artigos, tentarei apresentar um pouco sobre Qualidade para Sistemas/Aplicações de ML, mas mais especificamente sobre testes, monitoramento e algumas dicas sobre situações que você provavelmente encontrará quando lidando com este tema
 
-We will start the series with a better view of ML Systems and the challenges we have when dealing with quality.
+Iniciaremos, portanto, com uma breve introdução e visão de Sistemas de ML e dos desafios que temos ao lidar com Qualidade.
 
-## About ML Systems
+## Sobre Sistemas de ML
 
-### What is an ML System
+### O que é um Sistema de ML
 
-Before starting, it is nice to have a better understanding of what an ML System is, this will give us a better understanding of the challenges we have for Quality. ML Systems/Applications are very different from traditional systems/applications because they have an extra axis of change or complexity; a very nice view of this is given by Sato, Wider, and Windheuser (2019) in the CD4ML article:
+Antes de começar, é bom ter um melhor entendimento do que é um sistema de ML, isto nos dará uma melhor compreensão dos desafios que temos para Qualidade. Os sistemas/aplicações de ML são muito diferentes dos tradicionais, principalmente pela adição de eixos extra de complexidade e mudanças (ou um maior número de graus de liberdade); uma visão muito boa disso é dada por Sato, Wider e Windheuser (2019) no artigo CD4ML:
 
 ![ML System - CD4ML - Axis of Change](/images/monitoring-machine-learning/ml-axis-of-change.png)
 
-The authors provided not only the decomposition of the System/Application for their axis of change but also some examples of the changes:
+Os autores fornecem não apenas a decomposição do Sistema/Aplicativo, mas também alguns exemplos de mudanças que podem ocorrer nestes novos graus de liberdade:
 
-- **Data**: this is the *fundamental difference* for ML Systems, the *expected behavior is not given by the application, but by the data*. The examples are evolving schemas, volume, and different samplings over time.
-- **Model**: here we have the foundation for learning from data, different statistical techniques, and algorithms that allow us to make new predictions. Some examples of changes are different algorithms, multiple experiments, and longer training periods.
-- **Code**: the commonplace in comparison to traditional applications, we have code for configuring models, different serving scenarios, etc. There may be some changes depending on business needs, bug fixes, and different configurations.
+- **Data**: esta é a *diferença fundamental* para Sistemas de ML, principalmente porque o *comportamento esperado não é dado pelo código, ou pela aplicação* (como em aplicações tradicionais), mas sim *pelos dados*. Os exemplos disso são possíveis mudanças de schema, volume e diferentes taxas de amostragem ao longo do tempo.
+- **Model**: aqui temos a base para conseguir *aprender com os dados*, são diferentes técnicas estatísticas e algoritmos que nos permitem fazer predições. Alguns exemplos são algoritmos diferentes (ou modelos), múltiplos experimentos e períodos de treinamento mais longos e com mais recursos.
+- **Code**: a semelhança que temos com as aplicações tradicionais: temos código para configurar modelos, diferentes cenários de serviço (online/batch/streaming), entre outros. Exemplos são mudanças para atender as necessidades de negócio, bug fixes e diferentes configurações.
 
-### The ML Lifecycle
+### O ciclo de vida do ML
 
-If you have a minimal background on ML, you probably are familiar with the Machine Learning Lifecycle:
+Se você possui um conhecimento mínimo de ML, provavelmente já está familiarizado com o Ciclo de Vida de Modelos/Machine Learning:
 
 ![Machine Learning Lifecycle - Luminovo](/images/monitoring-machine-learning/machine-learning-lifecycle.jpeg)
 
-We basically have three main stages:
+Aqui temos basicamente três fases principais:
 
-- **Data Collection**: IMO, these are the most important steps on the lifecycle (remember the ML scenario: *"Garbage In, Garbage Out")*. You could also add the Feature Engineering step on the diagram above to have a better view of this stage. In the industry, these steps are usually performed by the Data Engineer.
-- **Model Training**: these steps relate to building the model, evaluating it, and training it. You could probably add the EDA step outside the model optimizations circle to have a better view. Here we have the role of the Data Scientist that has a good understanding of the *data*, *the business*, and also on the *ML techniques* to be used.
-- **Model Deployment**: finally, we have steps related to deploying the model in the production environment, for making real predictions. These steps are usually performed by the Machine Learning Engineer, although you will find many roles where the Data Engineer also is responsible for deploying the model. You can see that there are some situations where the predictions made by the model actually affect the data that will be used for the next versions of the model or new models.
+- **Data Collection**: na minha opinião, estas são as etapas mais importantes do ciclo de vida (lembre-se da premissa de ML: *Lixo entra, Lixo Sai*). Você também pode adicionar etapas de Engenharia de Features no diagrama acima para ter uma visão melhor desta etapa. Geralmente este trabalho está relacionado com o Engenheiro de Dados.
+- **Model Training**: essas etapas estão relacionadas à construção, avaliação e treinamento do modelo. Você provavelmente poderia adicionar a etapa de EDA fora do círculo de otimizações do modelo, para ter uma melhor visão. Aqui temos a função do Cientista de Dados que possui um bom conhecimento dos *dados*, do *negócio* e também das *técnicas de ML* a serem utilizadas.
+- **Model Deployment**: finalmente, temos as etapas relacionadas a implantação do modelo no ambiente de produção, para fazer predições reais. Essas etapas geralmente são executadas pelo Engenheiro de ML, mas você também pode encontrar cenários onde o Engenheiro de Dados também é responsável pela implantação do modelo. Você pode ver que existem algumas situações ou casos em que as predições feitas pelo modelo realimentam os dados de treinamento que serão utilizados para próximas versões ou novos modelos.
 
-## The Challenges for Quality
+## Os desafios da Qualidade
 
-I've introduced two general concepts that are the composition (or the moving parts) and the lifecycle of the ML System and by now you've probably have suspicions on what are some challenges in this scenario.
+Bem, até agora introduzi um pouco dois conceitos gerais que são a composição (ou as partes móveis) e o ciclo de vida de sistemas de ML e, agora, você provavelmente já tem algumas suspeitas referentes aos desafios para a Qualidade neste cenário.
 
-### Moving Parts & Different Teams
+### Graus de Liberdade e Equipes Diferentes
 
-We've seen that ML Systems have three different axes of complexity and they don't evolve at the same time or velocity, not only that but also different teams work on different steps of the ML lifecycle. That means that keeping an eye for changes is very hard and almost impossible if you have multiple models and teams working in the same organization; a very chaotic environment, indeed.
+Vimos que os sistemas de ML tem três eixos diferentes de complexidade e que estes não evoluem ao mesmo tempo e na mesmo velocidade, não só isso, mas também equipes diferentes podem trabalhar em diferentes etapas do ciclo de vida. Isto significa que ficar de olho nas diferentes mudanças  é muito difícil e quase impossível se você tiver muitos modelos em produção e muitas equipes trabalhando em uma mesma organização (diferentes origens, diferentes autores e diferentes 'donos'); um ambiente muito caótico, de fato.
 
-To illustrate I will give two brief examples (that could be related to real situations or not):
+Para ilustrar, darei dois breves exemplos (que podem ou não estar relacionados a situações reais):
 
-"Organization ABC has just deployed its first ML Model to increase sales, consisting of an API. Because they had very little experience with the theme, they hired a Data Engineer and a Data Scientist, who worked hard to deploy this model. They start to iterate for new models but due to a bug they need to rollback to the previous version, little did they know they forgot to implement model versioning."
+"A organização ABC acaba de implantar seu primeiro modelo de ML para aumentar as vendas, que consiste em uma API. Como eles tinham pouca experiência com o tema, contrataram um engenheiro de dados e um cientista de dados, que juntos trabalham para desenvolver e implantar esse modelo. Eles começam a iterar para novos modelos, mas devido a um bug, eles precisam reverter para a versão anterior. Mal sabiam eles que tinham se esquecido de implementar o controle de versão do modelo e que por causa disso seria uma tarefa muito difícil e trabalhosa para retornar a versão anterior."
 
-"Organization XYZ is mature on the Data Science has different Machine Learning Models on production, it also has a team dedicated for building data pipelines and feature serving, another team for building a Machine Learning Platform to train models and to deliver an experimentation environment for Data Scientists. Unfortunately, one day, after deploying a new model the business team finds out that there is something really wrong with a particular ML System, and tries to find out what is wrong with it, little did they know that information was scattered around between multiple applications, versions, authors, etc... Who is to blame?"
+"A organização XYZ está mais madura no tema de Ciência de Dados e tem diferentes modelos de ML em produção, ela também tem: uma equipe dedicada para construir pipelines de dados e serviço de features e outra equipe para construir uma plataforma de ML para treinar modelos e entregar um ambiente de experimentação para Cientistas de Dados. Infelizmente, um dia, após implantar um novo modelo, a equipe de negócios descobre que há algo errado com um determinado sistema de ML e tenta descobrir o que há de errado com ele, mas eles não sabem que há informações espalhadas entre várias aplicações, versões, autores e que a prioridade de cada uma das equipes para resolver o problema é diferente... Como encontrar o culpado e resolver o problema?"
 
-### Data-driven Process
+### Processo baseado em dados
 
-Another thing to notice is that testing data-driven applications are hard. We will talk a little bit more about testing and quality, but generally speaking, it is easy setting expectations for traditional applications because the behavior *is written on the code*, but how about ML Systems, where the *behavior is on the data*?
+Outra coisa a se notar é que aplicações baseadas ou orientadas a dados são difíceis. Falaremos sobre testes e qualidade mais pra frente mas, de forma geral, é muito mais fácil definir expectativas (valores ou comportamentos esperados) em aplicações tradicionais porque o comportamento *está escrito no código* (determinístico), mas e os sistemas de ML onde *o comportamento está nos dados*?
 
-You could argue that it is easy as separating a slice of the test set and setting expectations on that slice, but can we be sure that only doing that we are asserting model quality? Or maybe some instances are harder to classify than others? What about edge cases or key cases?
+Você poderia argumentar que esta tarefa é tão fácil quanto separar uma parte do set de testes e definir expectativas sobre essa parte, mas será que podemos ter mesmo certeza de que apenas fazendo isso estamos garantindo qualidade do modelo? Ou talvez algumas instâncias sejam mais difíceis de classificar do que outras? E quanto aos casos extremos ou principais?
 
-Because we are dealing with a *data-driven process*, ensuring quality for a model is very hard; in a scenario where we want to also be able to deal with ML Ethics (Ethical AI), it is very important to ensure expectations on different data categories/slices, using a simple metric for that may not capture all different predictions and distributions.
+Como estamos lidando com um *processo orientado por dados*, garantir a qualidade de modelo é muito difícil; em um cenário em que também queremos ser capazes de fornecer aplicações éticas (vide LGPD e a temática de Ethical AI) é muito importante garantir expectativas sobre diferentes categorias ou fatias de dados, principalmente porque quando usamos uma única métrica simples não conseguimos capturar todas as diferentes predições e distribuições para subconjuntos diferentes.
 
-Another very important thing to keep in mind is that unexpected inputs **will be received by your application at some point**. Yeah, because we are dealing with lots of integrations, there will come a time where your model will receive a negative number for age, or a category that does not exist, etc.; if you are not able to 'sanitize' your input you can get into a very bad situation, especially if your model feedback to your data pipeline, and you can also risk on making the wrong decisions (predictions).
+Outra coisa muito importante a se ter em mente é que entradas inesperadas **serão recebidas pela sua aplicação em algum momento**. Pois é, por estarmos lidando com muitas integrações e diferentes aplicações, chegará um momento em que seu modelo receberá um número negativo para idade, ou uma categoria que não existe etc.; se você não for capaz de 'higienizar' sua entrada, poderá entrar em uma situação muito ruim, especialmente se o seu modelo retroalimentar sua pipeline de dados para treinamento, e também poderá arriscar tomar decisões erradas (predições).
 
-Take a look at this example:
+Dê uma olhada neste exemplo:
 
-"Organization PQR uses ML for some considerable time for performing fraud prevention. Nevertheless, when trying to interpret the model Data Scientists began to notice that one particular feature has a really counterintuitive meaning, and also the performance for the model, across different versions, began to degrade since 9 months ago. Until they found out that one of the features given to the model had a bug and was given unexpected values for some cases."
+"A organização PQR usa ML por um tempo considerável para realizar a prevenção de fraudes. No entanto, ao tentar interpretar um modelo, os cientistas de dados começaram a perceber que uma determinada feature tinha um significado contra-intuitivo (dentro da explicabilidade de modelos) e que também o desempenho do modelo, em diferentes versões, tinha começado degradar desde 9 meses atrás. Até descobrir que uma das features fornecidas para o modelo continha um bug em seu processamento e fornecia valores inesperados para alguns casos que não eram tratados nem observados durante a predição do modelo."
 
-### Lots of configuration
+### Muita configuração
 
-Finally, I would like to talk a little bit about configuration issues. As we saw above, in the diagram by Sato, Wider, and Windheuser (2019), a lot of configuration resides inside code files that are stored on your VCS (note that keeping configuration on databases is not really a good practice because it introduces errors and makes it really hard to keep track). These files probably store lots of configuration: about your model (for training or scoring), about the data, and also about how the model is trained (hyperparameters).
+Por fim, gostaria de falar um pouco sobre os problemas de configuração. Como vimos acima, no diagrama de Sato, Wider e Windheuser (2019), muitas configurações residem dentro de arquivos que são armazenados no seu VCS (observe que manter a configuração em bancos de dados não é realmente uma boa prática porque introduz erros e torna muito difícil manter o controle). Esses arquivos provavelmente armazenam muitas configurações: sobre seu modelo (para treinamento ou scoring), sobre os dados e também sobre como o processo de treinamento do modelo (hiperparâmetros).
 
-You can think that this is a very trivial and useless subject, but keeping an eye for quality on configuration files is really important and can be very complex depending on how the configuration file is processed. Also, a simple change on a parameter may pass unnoticed until you see a hole in your system.
+Você pode pensar que este é um assunto muito trivial e inútil, mas ficar de olho na qualidade dos arquivos de configuração é muito importante e pode ser muito complexo dependendo de como o arquivo de configuração é processado/lido. Além disso, uma simples mudança em um parâmetro pode passar despercebida até que você tenha um grande buraco em seu sistema.
 
-One example to serve as a guide:
+Um exemplo para servir de guia:
 
-"In organization XYZ a Data Scientist developed a new version for a particular batch model. The organization maintains a second environment for integration and full end-to-end tests where the models are deployed before production, but the specifications for the environments are different. After passing all tests the model is deployed and fails for all executions, the Data Scientist tries to debug the execution of the model using the previous environment but everything seems to work fine. After involving multiple teams to look for the problem in the production environment they found that one of the parameters on the configuration file still points to the backtesting environment."
+“Na organização XYZ, um Cientista de Dados desenvolveu uma nova versão para um modelo batch específico. A organização mantém um segundo ambiente para integração e testes completos de ponta a ponta, onde os modelos são implantados antes da produção, mas as especificações dos ambientes são diferentes. Depois de passar em todos os testes, o modelo é implantado e falha em todas as execuções, o Cientista de Dados tenta depurar a execução do modelo usando o ambiente anterior, mas tudo parece funcionar bem. Depois de envolver várias equipes para procurar o problema no ambiente de produção, eles descobrem que um dos parâmetros no arquivo de configuração ainda aponta para o ambiente de backtesting."
 
 ## Wrap Up
 
-In this article, I tried to introduce a little bit about why it is important to keep an eye for quality for ML Systems and some challenges. We've seen some of the points on different degrees of freedom for the ML System and also that different teams and actors are responsible for specific tasks on the Machine Learning Lifecycle.
+Neste artigo, tentei apresentar um pouco sobre por que é importante ficar de olho na qualidade dos sistemas de ML e alguns desafios. Vimos alguns pontos sobre diferentes graus de liberdade para os sistemas de ML e também que diferentes equipes e atores são responsáveis por tarefas específicas em seu ciclo de vida.
 
-For the next article, we will try to look into testing and four different categories where testing is appreciated for ML Systems; the examples and points I raised here are based on experience and also on a very nice list of resources you will find bellow.
+No próximo artigo, tentaremos examinar os testes e quatro categorias diferentes em que os testes são importantes para sistemas de ML; os exemplos e pontos que levantei aqui são baseados em minha experiência e também em uma lista muito boa de recursos que você encontrará a seguir.
 
-## References
+## Referências
 
-RUBAN, T. **The Deep Learning Toolset — An Overview**. 2018. Available at: https://medium.com/luminovo/the-deep-learning-toolset-an-overview-b71756016c06
+RUBAN, T. **The Deep Learning Toolset — An Overview**. 2018. Disponível em: https://medium.com/luminovo/the-deep-learning-toolset-an-overview-b71756016c06
 
-SATO, D. WIDER, A. WINDHEUSER, C. **Continuous Delivery for Machine Learning**. 2019. Available at: https://martinfowler.com/articles/cd4ml.html
+SATO, D. WIDER, A. WINDHEUSER, C. **Continuous Delivery for Machine Learning**. 2019. Disponível em: https://martinfowler.com/articles/cd4ml.html
 
-BLASZKA, D. **Dangerous Feedback Loops in ML**. 2019. Available at: https://towardsdatascience.com/dangerous-feedback-loops-in-ml-e9394f2e8f43
+BLASZKA, D. **Dangerous Feedback Loops in ML**. 2019. Disponível em: https://towardsdatascience.com/dangerous-feedback-loops-in-ml-e9394f2e8f43
 
-SCULLEY, D. HOLD, G. GOLOVIN, D. DAVYDOV, E. PHILLIPS, T. **Hidden Technical Debt in Machine Learning Systems**. 2015. Available at: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf
+SCULLEY, D. HOLD, G. GOLOVIN, D. DAVYDOV, E. PHILLIPS, T. **Hidden Technical Debt in Machine Learning Systems**. 2015. Disponível em: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf
 
-BRECK, E. CAI, S. NIELSEN, E. SALIB, M. SCULLEY, D. **The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction**. 2017. Available at: https://research.google/pubs/pub46555/
+BRECK, E. CAI, S. NIELSEN, E. SALIB, M. SCULLEY, D. **The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction**. 2017. Disponível em: https://research.google/pubs/pub46555/
