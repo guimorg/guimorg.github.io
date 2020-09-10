@@ -1,13 +1,13 @@
 ---
 title: "Quality for Machine Learning Systems - Part 1"
-date: 2020-09-09
 tags: [machine learning, quality]
 toc: true
+lang: en
+ref: quality-for-machine-learning-pt-1
+excerpt: Introduction to Quality for Machine Learning, pt. 1
 header:
   image: "/images/monitoring-machine-learning/theme.jpeg"
 ---
-
-# Quality for Machine Learning Systems - Part 1
 
 Lately, one of the key subjects I've been studying and thinking about is Quality for Machine Learning Systems. I remember a couple of years ago when entering the field of ML that I had no idea how to measure quality. By that time, I was writing my first unit tests for web servers and had the first initial view on what quality is for Software in general, but when contemplated with the concept of ML, I had no idea what to look out for. 
 

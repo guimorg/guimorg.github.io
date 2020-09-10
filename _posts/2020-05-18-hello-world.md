@@ -2,6 +2,8 @@
 title: "Hello World"
 date: 2020-05-18
 tags: [general]
+lang: en
+ref: hello-world
 header:
   image: "/images/hello-world/hello-world.png"
 ---

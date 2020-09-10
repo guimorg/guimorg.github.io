@@ -1,11 +1,10 @@
 ---
-layout: home
-author_profile: true
 header:
   overlay_image: "/images/theme.jpg"
 paginate: 5
+layout: archive
+author_profile: true
 ---
-
 <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -13,3 +12,17 @@ paginate: 5
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+
+<h3 class="archive__subtitle">Recent Posts</h3>
+
+{% assign items_grouped = paginator.posts | group_by: 'ref' %}
+{% for group in items_grouped %}
+  {% if group.items.size > 1 %}
+    {% assign post = group.items | where: "lang",site.lang | first %}
+  {% else %}
+    {% assign post = group.items[0] %}
+  {% endif %}
+  {% include archive-single.html %}
+{% endfor %}
+
+{% include paginator.html %}
