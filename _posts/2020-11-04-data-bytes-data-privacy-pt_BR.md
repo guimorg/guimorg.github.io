@@ -9,6 +9,8 @@ header:
   image: "/images/data-bytes/data-privacy/theme.png"
 ---
 
+(Imagem tirada [daqui](https://www.onlineretailtoday.com/security/))
+
 A Lei de Proteção de Dados no Brasil já é uma realidade. Em vigor desde o dia [18 de setembro deste ano](https://agenciabrasil.ebc.com.br/geral/noticia/2020-09/entenda-o-que-muda-com-a-lei-geral-de-protecao-de-dados), a LGPD define um conjunto de normas para definir limites, condições de coleta, guarda e tratamento de informações pessoais. Um dos pilares da [LGPD](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm) é a **privacidade de dados**, conforme o Art. 1o: *"com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade"* e também o inciso I do Art. 2o: *"A disciplina da proteção de dados pessoais tem como fundamentos: o respeito à privacidade"*.
 
 Com isso, o tema de privacidade tem sido muito discutido em diversas mídias e também em organizações (principalmente por conta das consequências legais e riscos de imagem); neste pequeno artigo apresentarei alguns conceitos relacionados a privacidade e também minha visão sobre o tema para incitar a discussão e a busca de mais conhecimento.
