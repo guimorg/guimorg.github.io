@@ -10,7 +10,7 @@ header:
 
 ---
 
-The Data Protection Law in Brazil is already a reality. Effective since [September 18 this year](https://agenciabrasil.ebc.com.br/geral/noticia/2020-09/entenda-o-que-muda-com-a-lei-geral-de-protecao-de-dados), the LGPD defines a set of rules to define limits, conditions for the collection, storage and treatment of personal information. One of the pillars of [LGPD](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm) is **data privacy *, according to Art. 1: *"with the objective of protecting the fundamental rights of freedom and privacy"* and also item I of Art. 2: *"The discipline of the protection of personal data is based on: respect for privacy"*.
+The Data Protection Law in Brazil is already a reality. Effective since [September 18 this year](https://agenciabrasil.ebc.com.br/geral/noticia/2020-09/entenda-o-que-muda-com-a-lei-geral-de-protecao-de-dados), the LGPD defines a set of rules to define limits, conditions for the collection, storage and treatment of personal information. One of the pillars of [LGPD](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm) is **data privacy**, according to Art. 1: *"with the objective of protecting the fundamental rights of freedom and privacy"* and also item I of Art. 2: *"The discipline of the protection of personal data is based on: respect for privacy"*.
 
 As a result, the topic of privacy has been widely discussed in various media and also in organizations (mainly due to the legal consequences and image risks); in this short article I will present some concepts related to privacy and also my view on the topic to encourage discussion and the search for more knowledge.
 
