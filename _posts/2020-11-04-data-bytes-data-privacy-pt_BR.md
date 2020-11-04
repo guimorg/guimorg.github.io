@@ -9,6 +9,8 @@ header:
   image: "/images/data-bytes/data-privacy/theme.png"
 ---
 
+(Imagem tirada [daqui](https://www.onlineretailtoday.com/security/))
+
 A Lei de Proteção de Dados no Brasil já é uma realidade. Em vigor desde o dia [18 de setembro deste ano](https://agenciabrasil.ebc.com.br/geral/noticia/2020-09/entenda-o-que-muda-com-a-lei-geral-de-protecao-de-dados), a LGPD define um conjunto de normas para definir limites, condições de coleta, guarda e tratamento de informações pessoais. Um dos pilares da [LGPD](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm) é a **privacidade de dados**, conforme o Art. 1o: *"com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade"* e também o inciso I do Art. 2o: *"A disciplina da proteção de dados pessoais tem como fundamentos: o respeito à privacidade"*.
 
 Com isso, o tema de privacidade tem sido muito discutido em diversas mídias e também em organizações (principalmente por conta das consequências legais e riscos de imagem); neste pequeno artigo apresentarei alguns conceitos relacionados a privacidade e também minha visão sobre o tema para incitar a discussão e a busca de mais conhecimento.
@@ -64,7 +66,7 @@ Em outras palavras, a privacidade é encarada como a independência de decisão 
 
 Buscando obter alguma forma de privacidade, existem diversas soluções que foram adotadas ao longo do tempo e encaram a privacidade de forma diferente. Porque resolvemos buscar na Privacidade Diferencial o conceito de Privacidade, estas técnicas mostrarão e muito diversas falhas em manter a identidade dos indíviduos dentro de um *dataset*.
 
-- Retirar dados sensíveis: acho que essa é uma das soluções mais gerais levantadas para a privacidade; e talvez a que mais falha em atingir a privacidade. O principal problema é que ela assume que nós, indíviduos, somos identificáveis **somente** por dados sensíveis (o que não é verdade).
+- Retirar dados sensíveis: acho que essa é uma das soluções mais comuns levantadas para a privacidade; e talvez a que mais falha em atingir a privacidade. O principal problema é que ela assume que nós, indíviduos, somos identificáveis **somente** por dados sensíveis ou pelos dados removidos (o que não é verdade).
 - Usar apenas dados agregados: essa é outra prática bastante comum e consiste usar dados agregados em grupos de indivíduos. Aqui temos a falha em assumir que dados agregados não conseguem recuperar informações de indivíduos ou recuperar o *dataset* não agregado (algumas referências [aqui](https://iapp.org/news/a/aggregated-data-provides-a-false-sense-of-security/) e [aqui](https://tozny.com/blog/10-unnerving-privacy-fails-thru-data-aggregation/))
 - Anonimizar dados: este ponto foi introduzido acima com um exemplo prático do caso do Netflix. A principal falha aqui resta no fato de que informações contidas em outros *datasets* podem ser em conjunto para identificar indivíduos; e sim, isto é da responsabilidade da companhia dona dos dados "anonimizados".
 - Privacidade Diferencial: esta também é uma técnica que utiliza a aleatoriedade para atingir um certo nível de privacidade. Uma das falhas desta técnica é que a simples existência de um indivíduo dentro de um *dataset* **já é informativa e identificável**.
