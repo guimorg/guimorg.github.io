@@ -22,11 +22,11 @@ A good place to start the discussion is to define privacy; this definition alone
 
 ### Privacy and Anonymization
 
-It is very important to keep in mind that the concepts of privacy and anonymization are not identical and that anonymized data does not correspond to secure data or privacy. This point is not always very obvious because if we take a *dataset* (a set of data) as independent from others, in a vacuum, anonymization may seem sufficient to guarantee privacy.
+It is very important to keep in mind that the concepts of privacy and anonymization are not identical and that anonymized data does not correspond to secure data or privacy. This point is not always very obvious because if we take a *dataset* as independent from others, in a vacuum, anonymization may seem sufficient to guarantee privacy.
 
 However, anonymization fails in privacy when we take other data sources to identify an individual; that is to say that even if a *dataset* is anonymized, information contained in another *dataset* can be used to identify individuals.
 
-A good example of this is the case of the *Netflix Data Challenge*, which provided anonymized data to improve the recommendation system in 2006 (containing only fictional IDs and grades given to users by films); [two University of Texas researchers](https://www.cs.cornell.edu/~shmat/shmat_oak08netflix.pdf), Arvind Narayanan and Vitaly Shmatikov, however, have managed to identify individuals within this anonymized *dataset* using public data [Internet Movie Database](http://www.imdb.com/).
+A good example of this is the case of the *Netflix Data Challenge*, which provided anonymized data to improve the recommendation system in 2006 (containing only fictional IDs and movie ratings); [two University of Texas researchers](https://www.cs.cornell.edu/~shmat/shmat_oak08netflix.pdf), Arvind Narayanan and Vitaly Shmatikov, however, have managed to identify individuals within this anonymized *dataset* using public data [Internet Movie Database](http://www.imdb.com/).
 
 > We demonstrate that an adversary who knows only a little bit about an individual subscriber can easily identify this subscriber’s record in the dataset.
 >
@@ -57,17 +57,17 @@ The best definition, or the one that best satisfies me, is the differential defi
 The details of Differential Privacy are in the book [The Algorithmic Foundations of Differential Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf), available online (a great reference), but some ideas that lead us to the intuition of this concept:
 
 - The concept of privacy separates the individual from the knowledge learned (obtained through) the individual;
-- A consultation should not reveal whether or not an individual is within a *dataset*;
-- From an individual's point of view, there is a guarantee that the same consultation would be obtained with or without his information in a *dataset*;
+- A query should not reveal whether or not an individual is within a *dataset*;
+- From an individual's point of view, there is a guarantee that the same query would be obtained with or without his information in a *dataset*;
 - In other words, everything that can be learned about an individual using the *dataset*, must be able to be learned without access to the *dataset*.
 
-In other words, privacy is seen as the independence of decision or consultation of a specific individual. This *[blog post](https://robertovitillo.com/differential-privacy-for-dummies/)* explains a little better about Differential Privacy at a high level, another great reference on the topic is the first chapter of the book [ "The Ethical Algorithm: The Science of Socially Aware Algorithm Design"](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) which also has the **consequences** and **disadvantages** of differential privacy.
+In other words, privacy is seen as the independence of decision or query on a specific individual. This *[blog post](https://robertovitillo.com/differential-privacy-for-dummies/)* explains a little better about Differential Privacy at a high level; another great reference on the topic is the first chapter of the book [ "The Ethical Algorithm: The Science of Socially Aware Algorithm Design"](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) which also has the **consequences** and **disadvantages** of differential privacy.
 
 ## Privacy Solutions
 
-Seeking to obtain some form of privacy, there are several solutions that have been adopted over time and look at privacy differently. Because we decided to look for Differential Privacy in the concept of Privacy, these techniques will show and many different flaws in maintaining the identity of individuals within a *dataset*.
+Seeking to obtain some form of privacy, there are several solutions that have been adopted over time and look at privacy differently. Because we decided to look for Differential Privacy in the concept of Privacy, these techniques will show many different flaws in maintaining the identity of individuals within a *dataset*.
 
-- Remove sensitive data: I think this is one of the most general solutions raised for privacy; and perhaps the one that most fails to achieve privacy. The main problem is that it assumes that we individuals are identifiable **only** by sensitive data (which is not true).
+- Remove sensitive data: I think this is one of the most general solutions raised for privacy; and perhaps the one that most fails to achieve privacy. The main problem is that it assumes that we individuals are identifiable **only** by sensitive data or data that was removed (which is not true).
 - Use only aggregated data: this is another very common practice and consists of using aggregated data in groups of individuals. Here we fail to assume that aggregated data cannot retrieve information from individuals or retrieve the non-aggregated *dataset* (some references [here](https://iapp.org/news/a/aggregated-data-provides-a-false-sense-of-security/) and [here](https://tozny.com/blog/10-unnerving-privacy-fails-thru-data-aggregation/))
 - Anonymize data: this point was introduced above with a practical example from the case of Netflix. The main flaw here remains that information contained in other *datasets* can be combined to identify individuals; and yes, this is the responsibility of the company that owns the "anonymous" data.
 - Differential Privacy: this is also a technique that uses randomness to achieve a certain level of privacy. One of the shortcomings of this technique is that the simple existence of an individual within a *dataset* **is already informative and identifiable**.
