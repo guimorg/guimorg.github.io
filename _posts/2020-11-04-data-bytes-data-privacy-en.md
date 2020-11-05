@@ -10,7 +10,7 @@ header:
 
 ---
 
-(Image taken from [here](https://www.onlineretailtoday.com/security/))
+(Image taken from [here](https://www.bigcommerce.com/blog/consumer-data-privacy/))
 
 The Data Protection Law in Brazil is already a reality. Effective since [September 18 this year](https://agenciabrasil.ebc.com.br/geral/noticia/2020-09/entenda-o-que-muda-com-a-lei-geral-de-protecao-de-dados), the LGPD defines a set of rules to define limits, conditions for the collection, storage and treatment of personal information. One of the pillars of [LGPD](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm) is **data privacy**, according to Art. 1: *"with the objective of protecting the fundamental rights of freedom and privacy"* and also item I of Art. 2: *"The discipline of the protection of personal data is based on: respect for privacy"*.
 
@@ -22,7 +22,7 @@ A good place to start the discussion is to define privacy; this definition alone
 
 ### Privacy and Anonymization
 
-It is very important to keep in mind that the concepts of privacy and anonymization are not identical and that anonymized data does not correspond to secure data or privacy. This point is not always very obvious because if we take a *dataset* as independent from others, in a vacuum, anonymization may seem sufficient to guarantee privacy.
+It is very important to keep in mind that the concepts of privacy and anonymization are not identical and that anonymized data does not correspond to privacy. This point is not always very obvious because if we take a *dataset* as independent from others, in a vacuum, anonymization may seem sufficient to guarantee privacy.
 
 However, anonymization fails in privacy when we take other data sources to identify an individual; that is to say that even if a *dataset* is anonymized, information contained in another *dataset* can be used to identify individuals.
 

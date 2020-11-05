@@ -9,7 +9,7 @@ header:
   image: "/images/data-bytes/data-privacy/theme.png"
 ---
 
-(Imagem tirada [daqui](https://www.onlineretailtoday.com/security/))
+(Imagem tirada [daqui](https://www.bigcommerce.com/blog/consumer-data-privacy/))
 
 A Lei de Proteção de Dados no Brasil já é uma realidade. Em vigor desde o dia [18 de setembro deste ano](https://agenciabrasil.ebc.com.br/geral/noticia/2020-09/entenda-o-que-muda-com-a-lei-geral-de-protecao-de-dados), a LGPD define um conjunto de normas para definir limites, condições de coleta, guarda e tratamento de informações pessoais. Um dos pilares da [LGPD](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm) é a **privacidade de dados**, conforme o Art. 1o: *"com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade"* e também o inciso I do Art. 2o: *"A disciplina da proteção de dados pessoais tem como fundamentos: o respeito à privacidade"*.
 
@@ -21,7 +21,7 @@ Um bom lugar para começar a discussão é definir o que é privacidade; esta de
 
 ### Privacidade e Anonimização
 
-É muito importante ter em mente que os conceitos de privacidade e anonimização não são idênticos e que dados anonimizados não correspondem à dados seguros ou à privacidade. Este ponto nem sempre é muito óbvio porque se tomamos um *dataset* (um conjunto de dados) como independente de outros, em um vácuo, a anonimização pode parecer suficiente para garantia de privacidade.
+É muito importante ter em mente que os conceitos de privacidade e anonimização não são idênticos e que dados anonimizados não correspondem à dados privados (ou privacidade). Este ponto nem sempre é muito óbvio porque se tomamos um *dataset* (um conjunto de dados) como independente de outros, em um vácuo, a anonimização pode parecer suficiente para garantia de privacidade.
 
 No entanto, a anonimização falha em privacidade quando tomamos outras fontes de dados para identificar um indivíduo; isto é dizer que mesmo que um *dataset* esteja anonimizado, informações contidas em outro *dataset* podem ser utilizadas para identificar indivíduos.
 
@@ -99,4 +99,4 @@ Phillips D. **Data Privacy vs. Data Security: What is the Core Difference?**. Di
 
 Vitillo R. **Differential Privacy for Dummies**. Disponível em: https://robertovitillo.com/differential-privacy-for-dummies/
 
-Harvard University Privacy Tools Project. **Differential Privacy.** Disponível em: https://privacytools.seas.harvard.edu/differential-privacy
+Harvard University Privacy Tools Project. **Differential Privacy.** Disponível em: https://privacytools.seas.harvard.edu/differential-privacyc
