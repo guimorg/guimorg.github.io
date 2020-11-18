@@ -41,7 +41,9 @@ Este é um dos pontos levantados por Cynthia Dwork, uma das responsáveis pelo c
 
 ### Privacidade e Criptografia
 
-Outro ponto muito levantado é que a criptografia pode ser utilizada dentro do contexto da privacidade. Na verdade, a criptografia de dados é a solução de um problema diferente da privacidade: ela resolve o problema de *segurança do dados*. Um ponto importante para a LGPD é referente aos incidentes de exposição de dados, ou seja, ao problema de acesso e proteção.
+Outro ponto muito levantado é que a criptografia pode ser utilizada dentro do contexto da privacidade. Na verdade, a criptografia de dados é a solução de um problema diferente da privacidade: ela resolve o problema de *segurança do dados*.
+
+Para a LGPD, este é um tema muito importante, pois lida com possíveis incidentes de exposição de dados, que sob a criptografia ficam "seguros".
 
 A melhor forma de entender a diferença destes dois elementos é que:
 
@@ -64,14 +66,14 @@ Em outras palavras, a privacidade é encarada como a independência de decisão 
 
 ## Soluções para a Privacidade
 
-Buscando obter alguma forma de privacidade, existem diversas soluções que foram adotadas ao longo do tempo e encaram a privacidade de forma diferente. Porque resolvemos buscar na Privacidade Diferencial o conceito de Privacidade, estas técnicas mostrarão e muito diversas falhas em manter a identidade dos indíviduos dentro de um *dataset*.
+Buscando obter alguma forma de privacidade, existem diversas soluções que foram adotadas ao longo do tempo e encaram a privacidade de forma diferente. Porque resolvemos buscar na Privacidade Diferencial o conceito de Privacidade, estas técnicas mostrarão diversas falhas em manter a identidade dos indíviduos dentro de um *dataset*.
 
 - Retirar dados sensíveis: acho que essa é uma das soluções mais comuns levantadas para a privacidade; e talvez a que mais falha em atingir a privacidade. O principal problema é que ela assume que nós, indíviduos, somos identificáveis **somente** por dados sensíveis ou pelos dados removidos (o que não é verdade).
-- Usar apenas dados agregados: essa é outra prática bastante comum e consiste usar dados agregados em grupos de indivíduos. Aqui temos a falha em assumir que dados agregados não conseguem recuperar informações de indivíduos ou recuperar o *dataset* não agregado (algumas referências [aqui](https://iapp.org/news/a/aggregated-data-provides-a-false-sense-of-security/) e [aqui](https://tozny.com/blog/10-unnerving-privacy-fails-thru-data-aggregation/))
-- Anonimizar dados: este ponto foi introduzido acima com um exemplo prático do caso do Netflix. A principal falha aqui resta no fato de que informações contidas em outros *datasets* podem ser em conjunto para identificar indivíduos; e sim, isto é da responsabilidade da companhia dona dos dados "anonimizados".
+- Usar apenas dados agregados: essa é outra prática bastante comum e consiste em usar dados agregados em grupos de indivíduos. Aqui temos a falha em assumir que dados agregados não conseguem recuperar informações de indivíduos ou recuperar o *dataset* não agregado (algumas referências [aqui](https://iapp.org/news/a/aggregated-data-provides-a-false-sense-of-security/) e [aqui](https://tozny.com/blog/10-unnerving-privacy-fails-thru-data-aggregation/))
+- Anonimizar dados: este ponto foi introduzido acima com um exemplo prático do caso do Netflix. A principal falha aqui resta no fato de que informações contidas em outros *datasets* podem ser usadas em conjunto para identificar indivíduos; e sim, isto é da responsabilidade da companhia dona dos dados "anonimizados".
 - Privacidade Diferencial: esta também é uma técnica que utiliza a aleatoriedade para atingir um certo nível de privacidade. Uma das falhas desta técnica é que a simples existência de um indivíduo dentro de um *dataset* **já é informativa e identificável**.
 
-Existem outras soluções para a privacidade fora desta lista (Privacidade Sintética, por exemplo), mas elas se encontram muitas vezes fora da praticidade ou usabilidade. [Este artigo](https://pdfs.semanticscholar.org/7c6a/bddbd791dddd281c5764dbe859c55ba2e019.pdf?_ga=2.170032995.299723572.1604518308-1165209624.1601912032) detalha muitas destas técnicas e até mesmo outras definições de privacidade, vale a pena a leitura!
+Existem outras soluções para a privacidade fora desta lista (Privacidade Sintética, por exemplo), mas elas se encontram muitas vezes fora da praticidade ou usabilidade. [Este artigo](https://pdfs.semanticscholar.org/7c6a/bddbd791dddd281c5764dbe859c55ba2e019.pdf?_ga=2.170032995.299723572.1604518308-1165209624.1601912032) detalha muitas destas técnicas e até mesmo outras definições de privacidade. Vale a pena a leitura!
 
 ## Wrap Up
 
