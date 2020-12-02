@@ -5,6 +5,8 @@ toc: true
 lang: en
 ref: metaprogramming-101
 excerpt: Metaclasses and Metaprogramming in Python
+header:
+  image: "/images/metaprogramming/post.png"
 ---
 
 Before understanding what metaprogramming is, why don't we refresh a little bit about Python classes, objects, and metaclasses?
@@ -180,7 +182,7 @@ Basically, everytime you create and instatiate a class this happens:
 
 - Python checks for the metaclass' class (this happens both at the class level and module level, check here for [more info](https://www.python.org/dev/peps/pep-3115/))
   - If there is no metaclass defined, `type` - the default one - is used
-- Using the metaclass, creates a class object in-memory - remember the metaclass will create a class object, not a class instance!
+- Using the metaclass, Python creates a class object in-memory - remember the metaclass will create a class object, not a class instance!
 - Finally, instantiates the class's object!
 
 A very nice thing to know is that metaclasses don't actually need to be classes, you can also use functions as metaclasses!
@@ -251,7 +253,7 @@ This is a very simple program that creates another program to print number betwe
 s='s=%r;print(s%%s)';print(s%s)
 ```
 
-This example is of a Python quine, a code that when executed replicates itself, try running it on your interpreter!
+This example is of a Python [*quine*](https://en.wikipedia.org/wiki/Quine_(computing)#:~:text=A%20quine%20is%20a%20computer,%22self%2Dcopying%20programs%22.), a code that when executed replicates itself, try running it on your interpreter!
 
 ### A more useful example
 
@@ -285,13 +287,21 @@ def helloworld():
     print("Hello World")
 
 helloworld()
+# Hello World
 
 helloworld = print_jokes(n_jokes=5)(helloworld)
 
 helloworld()
+# Some random jokes for you:\n
+# git off!
+# What we push in life echoes in eternity
+# May the forks be with you
+# You can store your code in it!
+# The problem with Git jokes ? well, everyone has their own version :)
+# Hello World
 ```
 
-Nice! This is a first attempt at metaprogramming; you see, we wrote code that was able to manipulate the code itself, just as we would with data. And we can also do that with classes, not only functions
+Nice! This is a first attempt at metaprogramming; you see, we wrote code that was able to manipulate the code itself, just as we would with data. And we can also do that with classes, not only functions:
 
 ```python
 def cls_wrapper(cls):
@@ -311,13 +321,25 @@ class HelloWorld:
         print("method3 was called!")
 
 
-hello = HelloWorld()
+hellow = HelloWorld()
 
 hellow.method1()
+# Some random jokes for you:\n
+# git pull a day keeps the conflicts away
+# I bet you thought this was a joke. Nope, git-testa.
+# method1 was called!
 
 hellow.method2()
+# Some random jokes for you:\n\n
+# hellow.method3()git-stash: The sock drawer of version control
+# git-bisect: The good, the bad and the... uhh... skip
+# method2 was called!
 
 hellow.method3()
+# Some random jokes for you:\n
+# Don't forgit to bring a towel
+# Be careful when rewriting history. It may push you to use the dark side of the --force
+# method3 was called!
 ```
 
 See, we can even manipulate classes using a class decorator! How awesome is that?
