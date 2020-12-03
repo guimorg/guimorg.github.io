@@ -361,7 +361,7 @@ Mas, claro, existem alguns casos em que metaclasses e/ou metaprogramação são 
 
 #### Design Patterns: Singleton
 
-OK. Então você quer implemetar o pattern Singleton em Python. Mas como você faz isso? Eu realmente já vi alguns usos muito espertos de implementação de singletons utilizando arquivos separados (módulos) e sempre importando deste módulo. Mas o problema aqui é que o seu objeto Singleton não consegue ser instanciado de forma *lazy*.
+OK. Então você quer implementar o pattern Singleton em Python. Mas como você faz isso? Eu já vi alguns usos realmente muito espertos da implementação de singletons utilizando arquivos separados (módulos) e sempre importando deste módulo. Mas o problema aqui é que o seu objeto Singleton não consegue ser instanciado de forma *lazy*:
 
 ```python
 #!/bin/env python3
@@ -378,7 +378,7 @@ from singleton import singleton
 # Agora basta usar a variável singleton como quiser ;D
 ```
 
-Eu realmente gosto dessa estratégia porque "simple é melhor que complexo" (PEP 20), mas vamos dar um passo pra trás e pensar nesta solução de um ponto de vista de metaprogramação: nós queremos, em tempo de execução, sempre retornar o mesmo objeto em vez de criar um novo quando instanciamos utilizando uma classe...
+Eu gosto bastante dessa estratégia porque "simples é melhor do que complexo" (PEP 20), mas vamos dar um passo pra trás e pensar nesta solução de um ponto de vista de metaprogramação: nós queremos, em tempo de execução, sempre retornar o mesmo objeto em vez de criar um novo quando instanciamos utilizando uma classe (ou, manipular código como se fosse um "dado")...
 
 ```python
 class SingletonMetaclass(type):
@@ -405,7 +405,7 @@ Perfeito! Conseguimos criar uma metaclasse que armazena em uma variável de clas
 
 ### ABC Metaclasses
 
-Dependendo do seu passado técnico, você já deve ter se perguntando como definir uma interface em Python. Pra ser 100% honesto, não existe uma coisa como interface em Python, principalmente porque a linguagem possui coisas como *duck typing* e *multi herança*. Mas, algumas vezes você quer garantir ou enforçar que usuários definam alguns métodos obrigatórios em uma classe, para isso nós utilizamos `ABC` ou [Classes Base Abstratas](https://docs.python.org/3.7/library/abc.html).
+Dependendo do seu passado técnico, você já deve ter se perguntando como definir uma interface em Python. Pra ser 100% honesto, não existe uma coisa como "interface" em Python, principalmente porque a linguagem possui coisas como *duck typing* e *multi herança*. Mas, algumas vezes você quer garantir ou enforçar que usuários definam alguns métodos obrigatórios em uma classe, para isso nós utilizamos `ABC` ou [Classes Base Abstratas](https://docs.python.org/3.7/library/abc.html).
 
 ```python
 from abc import ABCMeta, abstractmethod
@@ -488,7 +488,7 @@ Fantástico, manter esse código agora é um pouco mais fácil, já que não pre
 
 ### APIs
 
-Então, esta é uma das aplicações mais legais de metaprogramação e metaclasses. Geralmente, quando estamos criando um *framework* ou uma biblioteca, queremos reduzir a necessidade de código *boilerplate* e manter uma boa interface para nossa API. Você pode, então, usar metaclasses e metaprogramação para consegur isso. Ao invés de escrever código, desta vez vamos ver como essa técnica é utilizada "na natureza":
+Então, esta é uma das aplicações mais legais de metaprogramação e metaclasses. Geralmente, quando estamos criando um *framework* ou uma biblioteca, queremos reduzir a quantidade e a necessidade de código *boilerplate*, mantendo uma boa interface para a API. Você pode então usar metaclasses e metaprogramação para consegur isso. Ao invés de escrever código, desta vez vamos ver como essa técnica é utilizada "na natureza":
 
 #### Django ORM
 
