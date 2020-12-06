@@ -1,6 +1,6 @@
 ---
 title: "Metaprogramming 101"
-tags: [machine learning, quality]
+tags: [python, software]
 toc: true
 lang: pt_BR
 ref: metaprogramming-101
@@ -256,8 +256,6 @@ s='s=%r;print(s%%s)';print(s%s)
 
 Esse é um exemplo de um [*quine*](https://pt.wikipedia.org/wiki/Quine_(inform%C3%A1tica)#:~:text=Em%20inform%C3%A1tica%2C%20um%20quine%20%C3%A9,pr%C3%B3prio%20c%C3%B3digo%20fonte%20do%20programa.) em Python, um código que quando executado se auto-replica (ou descreve seu código-fonte), tente executá-lo em seu interpretador Python!
 
-This example is of a Python quine, a code that when executed replicates itself, try running it on your interpreter!
-
 ### Um exemplo mais útil
 
 Bom, caso você não saiba, se você alguma vez criou um [Python decorator](https://realpython.com/primer-on-python-decorators/), você usou metaprogramação (tome um cafezinho, você merece!). Apenas para te relembrar, um decorador em Python é uma função que "embrulha" uma outra função ou uma classe e "muda seu comportamento/funcionamento". Vamos ver um exemplo bem simples:
@@ -349,7 +347,7 @@ Viu? Conseguimos manipular uma classe usando um decorador de classes? Quão lega
 
 ### De volta às metaclasses
 
-Até agora já conseguimos ver alguns casos de uso para metaclasses muito simples, mas como metaclasses **realmente são utilizadas** para metaprogramação em Python? Como que, por que usaríamos metaclasses ou metaprogramação?
+Até agora já conseguimos ver alguns casos de uso para metaclasses muito simples, mas como metaclasses **realmente são utilizadas** para metaprogramação em Python? Por que usaríamos metaclasses ou metaprogramação?
 
 Pra ser muito honesto, para maioria das aplicações, utilizar metaclasses provavelmente vai ser um exagero:(. Lembra do criador do "The Zen of Python" (PEP 20 ou `import this`), Tim Peter? Ele tem uma frase muito famosa sobre metaclasses (que honestamente, não consegui rastrear sua origem):
 
@@ -441,7 +439,7 @@ Viu? Agora usuários não conseguem instanciar objetos de uma classe que derive 
 
 ### Registrando Objetos
 
-Imagine um cenário onde você precisa gerencial múltiplos conectores de banco de dados em uma estrutura comum (um dicionário). Você pode usar metaclasses para automaticamente registrar novos conectores e previnir alguns erros de registro que antes deveriam ser feitos de forma manual.
+Imagine um cenário onde você precisa gerenciar múltiplos conectores de banco de dados em uma estrutura comum (um dicionário). Você pode usar metaclasses para automaticamente registrar novos conectores e previnir alguns erros de registro que antes deveriam ser feitos de forma manual.
 
 ```python
 import inspect

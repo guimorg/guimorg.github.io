@@ -1,6 +1,6 @@
 ---
 title: "Metaprogramming 101"
-tags: [machine learning, quality]
+tags: [software, python]
 toc: true
 lang: en
 ref: metaprogramming-101
