@@ -202,7 +202,7 @@ def camel_case_attributes(future_class_name, future_class_parents, future_class_
     }
     
     # Here type creates the class object
-    return type(future_class_name, future_class_parents, CamelCase_attributes)
+    return type(future_class_name, future_class_parents, camelCase_attributes)
 
 
 class WhatIsLove(metaclass=camel_case_attributes):
