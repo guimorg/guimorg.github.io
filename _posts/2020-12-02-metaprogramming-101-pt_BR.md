@@ -364,7 +364,7 @@ Mas, claro, existem alguns casos em que metaclasses e/ou metaprogramação são 
 OK. Então você quer implementar o pattern Singleton em Python. Mas como você faz isso? Eu já vi alguns usos realmente muito espertos da implementação de singletons utilizando arquivos separados (módulos) e sempre importando deste módulo. Mas o problema aqui é que o seu objeto Singleton não consegue ser instanciado de forma *lazy*:
 
 ```python
-#!/bin/env python3
+#!/usr/bin/env python3
 # file: singleton.py
 
 class Singleton:

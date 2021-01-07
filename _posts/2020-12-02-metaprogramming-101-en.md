@@ -361,7 +361,7 @@ But of course, there are some cases in which metaclasses for metaprogramming are
 OK. So you want to implement the Singleton pattern in Python. How do you do that? I've already saw some very clever uses of implementing singletons on a separate file - a module - and always importing from that file. But the problem is that this does not allow the Singleton to be lazily instantiated.
 
 ```python
-#!/bin/env python3
+#!/usr/bin/env python3
 # file: singleton.py
 
 class Singleton:
