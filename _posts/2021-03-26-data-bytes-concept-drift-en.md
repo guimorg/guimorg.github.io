@@ -43,13 +43,13 @@ Considering this scenario, the following event may happen: our priors probabilit
 
 There are different types of concept drifts that can arrive in the changes above:
 
-#### Real Concept Drift
+### Real Concept Drift
 
 This is also known as concept shift or conditional change and refers to **changes in $p(y\|X)$**, i.e. changes on our posterior probability that could arrive with changes in the distribution of our input data *P(X)* or not.
 
 One thing to mention is that a real concept drift scenario **is very hard to notice, especially** if you're in a scenario where your **true feedback labels are delayed**, that is, the response for a right or wrong prediction for the model only arrive after a time window.
 
-#### Virtual Drift
+### Virtual Drift
 
 This is also known as feature change, sampling drift, or temporary drift and refers to **a change in our input data distribution $P(X)$ without affecting our posterior probability distribution $p(y\|X)$**.
 

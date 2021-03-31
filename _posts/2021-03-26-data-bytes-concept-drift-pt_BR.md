@@ -43,13 +43,13 @@ Considerando esta situação, os seguintes eventos podem ocorrer: uma mudança n
 
 Existem diferentes tipos de *concept drifts* que podem surgir das mudanças que descrevemos acima:
 
-#### Concept Drift Real
+### Concept Drift Real
 
 Também conhecido como concept shift ou conditional change, se refere a **mudanças na probabilidade posterior $p(y\|X)$**, que podem surgir com mudanças na distribuição dos dados de entrada $P(X)$ ou não.
 
 Uma coisa interessante de se mencionar é que esta situação de um concept drift real **é muito difícil de ser encontrada, especialmente** se estamos em um cenário onde o **o valor verdadeiro da saída de nossos dados, ou o feedback de nossas respostas é atrasado**, ou seja, onde a só sabemos a resposta verdadeira (ou se nosso modelo 'acertou ou errou' sua predição) depois de um tempo.
 
-#### Drift Virtual
+### Drift Virtual
 
 Este pode ser conhecido como feature change, sampling drift ou temporary drift e se refere a **uma mudança na distribuição dos dados de entrada $P(X)$ que não afeta nossa distribuição de probabilidades posteriores $p(Y\|X)$.**
 
