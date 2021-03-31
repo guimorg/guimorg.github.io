@@ -15,15 +15,15 @@ Hoje vamos abordar um pouco sobre o *concept drift* - preferi utilizar o termo e
 
 ## Concept Drift
 
-Antes de começarmos, vamos definir algumas premissas que serão fundamentais para elaborarmos sobre este conceito: primeiro, estaremos olhando sob a pespectiva do aprendizado supervisionado - onde predizemos uma variável de interesse $y$ dado um conjunto de variáveis de entrada $X$.
+Antes de começarmos, vamos definir algumas premissas que serão fundamentais para elaborarmos sobre este conceito: primeiro, estaremos olhando sob a perspectiva do aprendizado supervisionado - onde predizemos uma variável de interesse $y$ dado um conjunto de variáveis de entrada $X$.
 
 Para problemas de classificação, onde $y$ é um valor categórico, podemos descrever este cenário utilizado a Teoria Bayesiana de Decisão (DUDA et al, 2001):
 
 $$p(y|X)=\dfrac{p(y)p(X|y)}{p(X)}\\\text{onde}\\p(X)=\sum^{c}_{y=1}p(y)P(X|y)$$
 
-Aqui, nossa probablidade da classificação $p(y\|X)$ é descrita pela probabilidades anteriores das nossas classes $p(y)$ e pelas funções de densidade de probabilidade condicional das classes $p(X\|y)$ (vale a pena ressaltar que na equação acima estamos assumindo os custos de classificações iguais para todas as classes).
+Aqui, nossa probabilidade da classificação $p(y\|X)$ é descrita pela probabilidades anteriores das nossas classes $p(y)$ e pelas funções de densidade de probabilidade condicional das classes $p(X\|y)$ (vale a pena ressaltar que na equação acima estamos assumindo os custos de classificações iguais para todas as classes).
 
-Para a maioria dos problemas de Machine Learning (ou talvez para os cenários mais clássicos), nos é dado um conjunto de dados (histórico e marcado, isto é, com instâncias $(X_{n}, y_{n})$) do qual aprendemos e desenvolvemos um modelo (Gama et al (2013) geralmente definem este como o cenário offine). Dentro de um cenário de consumo online para este modelo, novos dados são recebidos um a um, num possível fluxo infinito, para a realização de predições (basicamente fazendo um 'mapeamento' do espaço de entrada $X$ para sua correspondente saída $y$).
+Para a maioria dos problemas de Machine Learning (ou talvez para os cenários mais clássicos), nos é dado um conjunto de dados (histórico e marcado, isto é, com instâncias $(X_{n}, y_{n})$) do qual aprendemos e desenvolvemos um modelo (Gama et al (2013) geralmente definem este como o cenário off-line). Dentro de um cenário de consumo online para este modelo, novos dados são recebidos um a um, num possível fluxo infinito, para a realização de predições (basicamente fazendo um 'mapeamento' do espaço de entrada $X$ para sua correspondente saída $y$).
 
 Em um situações reais e produtivas, **é esperada a 'evolução' dos dados com o passar do tempo (ou uma mudança nas distribuições)**, em outras palavras um cenário não-estacionário: nosso ambiente é dinâmico e constantemente muda com o tempo.
 
@@ -35,7 +35,7 @@ Gama et al (2013) definem o concept drift como:
 
 $$\exists X:p_{t_{0}}(X,y) \ne p_{t_{1}}(X,y)$$
 
-Aqui, $p_{t_{n}}$ denota a distribuição conjunto no tempo $t_{n}$ entre nossas variáveis de entrada $X$ e nossa saída esperada $y$. Nesta definição, estamos argumentando que por conta de nosso ambiente não-estacionário, existe um tempo $t$ onde a distribuição conjunta $p(X,y)$, aprendida dos nossos dados de treinamento, não corresponse a distribuição atual.
+Aqui, $p_{t_{n}}$ denota a distribuição conjunto no tempo $t_{n}$ entre nossas variáveis de entrada $X$ e nossa saída esperada $y$. Nesta definição, estamos argumentando que por conta de nosso ambiente não-estacionário, existe um tempo $t$ onde a distribuição conjunta $p(X,y)$, aprendida dos nossos dados de treinamento, não corresponde a distribuição atual.
 
 Considerando esta situação, os seguintes eventos podem ocorrer: uma mudança nas nossas probabilidades anteriores $p(y)$ e/ou uma mudança em nossas probabilidades condicionais das classes $p(X\|y)$, que resultam em uma mudança nas probabilidades posteriores das classes $p(y\|X)$, onde nossas predições não são condizentes.
 
@@ -61,7 +61,7 @@ Gama et al (2013) fornecem uma comparação visual muito intuitiva dos dois tipo
 
 ![image-20210331105705535](/images/data-bytes/concept-drift/comparison-drifts.png){: .align-center}
 
-Podemos observar que no caso de um concept drift real, o limite de decisão mudou, isto é, as predições obtidas pelo limite de decisão original não são mais condizentes com a realidade; do outro lado podemos observar que no caso de um drift virtual, o limite de decisão original ainda é condinzente, mesmo com a mudança na distribuição dos dados de entrada.
+Podemos observar que no caso de um concept drift real, o limite de decisão mudou, isto é, as predições obtidas pelo limite de decisão original não são mais condizentes com a realidade; do outro lado podemos observar que no caso de um drift virtual, o limite de decisão original ainda é condizente, mesmo com a mudança na distribuição dos dados de entrada.
 
 ## Natureza da mudanças
 
@@ -79,17 +79,17 @@ Outra possível causa é quando **a natureza de um conceito muda**, isto está m
 
 ### Ritmo de Mudanças
 
-Este é um tópico extremamente importante, na minha opiniao, principalmente porque existem algumas pequenas confusões na definição de concept drift e como podemos observá-lo. Gama et al (2013) disponibilizaram uma representação virtual de diferentes padrões e ritmos de mudança para dados unidimensionais:
+Este é um tópico extremamente importante, na minha opinião, principalmente porque existem algumas pequenas confusões na definição de concept drift e como podemos observá-lo. Gama et al (2013) disponibilizaram uma representação virtual de diferentes padrões e ritmos de mudança para dados unidimensionais:
 
 ![image-20210331121613093](/images/data-bytes/concept-drift/change-over-time.png){: .align-center}
 
-Aqui conseguimos visualizar diferentes padrões de murança, em alguns casos as mudanças são mais fáceis de detectar (mudança repentinas/abruptas ou graduais), em outros elas podem estar relacionadas a padrões sazonais (conceitos recorrentes), e alguns podem nem mesmo serem realmente drifts (como anomalias ou outliers).
+Aqui conseguimos visualizar diferentes padrões de mudança, em alguns casos as mudanças são mais fáceis de detectar (mudança repentinas/abruptas ou graduais), em outros elas podem estar relacionadas a padrões sazonais (conceitos recorrentes), e alguns podem nem mesmo serem realmente drifts (como anomalias ou outliers).
 
 O grande desafio aqui é em **como podemos detectar e diferenciar concept drifts reais de ruídos ou anomalias**.
 
 ## Conclusão
 
-Este post do data bytes foi uma pequena introdução ao concept drift e a possiveis desafios atrelados a sua detecção. A verdade é que esta detecção não é trivial e podem ser necessários diferentes tipos de aproximações (ou proxies) para tentar identificar uma possível situação de concept drift - isto é especialmente difícil quando lidamos com um feedback atrasado das respostas do modelo.
+Este post do data bytes foi uma pequena introdução ao concept drift e a possíveis desafios atrelados a sua detecção. A verdade é que esta detecção não é trivial e podem ser necessários diferentes tipos de aproximações (ou proxies) para tentar identificar uma possível situação de concept drift - isto é especialmente difícil quando lidamos com um feedback atrasado das respostas do modelo.
 
 O termo de concept drift também é muito abordado dentro de **Aprendizagem Ativa**, e a maioria das referências citadas abaixo foram escritas dentro deste contexto (Joao da Gama é uma das minha maiores referências para este assunto, dê uma olhada no seu livro e na sua pesquisa).
 

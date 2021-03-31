@@ -25,7 +25,7 @@ Here, our classification probability $p(y\|X)$ is described by the prior probabi
 
 For most machine learning problems (or the most classical scenarios) we are given a dataset (an historical and labeled dataset, consisting with $(X_{n}, y_{n})$) from which we learn from and develop a model (Gama et al (2013) usually refers to this as the *offline* scenario). For an online consumption scenario, this model receives data in a potentially infinite stream for making predictions ('mapping' the input space *X* for its corresponding output *y*).
 
-In a real-world scenario the **data is expected to evolve over time**, meaning a non-stationary: our environment is dynamic and is constantly changing in time.
+In a real-world scenario the **data is expected to evolve over time**, meaning non-stationarity: our environment is dynamic and is constantly changing in time.
 
 ### What is Concept Drift?
 
@@ -35,9 +35,9 @@ Gama et al (2013) defines concept drift as:
 
 $$\exists X:p_{t_{0}}(X,y) \ne p_{t_{1}}(X,y)$$
 
-Here, $p_{t_{n}}$ denotes the joint distribution at time $t_{n}$ between our input variables $X$ and our target $y$. In this definition we are arguing that because of our non-stationary environment, there exists a time $t$ where our joint probablity $p(X,y)$, learned from our training dataset, does not corresponds to the real distribution anymore.
+Here, $p_{t_{n}}$ denotes the joint distribution at time $t_{n}$ between our input variables $X$ and our target $y$. In this definition we are arguing that because of our non-stationary environment, there exists a time $t$ where our joint probability $p(X,y)$, learned from our training dataset, does not corresponds to the real distribution anymore.
 
-Considering this scenario, the following event may happen: our priors probabilities $p(y)$ change and/or our class conditional probabilities $p(X\|y)$ change, resulting in a change on our posterior probabilites of classes $p(y\|X)$, where our predictions may not hold anymore.
+Considering this scenario, the following event may happen: our priors probabilities $p(y)$ change and/or our class conditional probabilities $p(X\|y)$ change, resulting in a change on our posterior probabilities of classes $p(y\|X)$, where our predictions may not hold anymore.
 
 ## Types of Concept Drift
 
@@ -83,7 +83,7 @@ In my opinion, this is a **hot topic**, especially because there is a little con
 
 ![image-20210331121613093](/images/data-bytes/concept-drift/change-over-time.png){: .align-center}
 
-Here we can see different patterns of change, some cases are easier to detect (sudden/abrupt or gradual) changes, other are more difficult (incremental), or some of them may be related to 'seasonal' behaviours (reocurring concepts), and some of them are not actually drifts (like outliers or anomalies).
+Here we can see different patterns of change, some cases are easier to detect (sudden/abrupt or gradual) changes, other are more difficult (incremental), or some of them may be related to 'seasonal' behaviours (reoccurring concepts), and some of them are not actually drifts (like outliers or anomalies).
 
 The real challenge here is **how to detect real concept drift from noise errors or anomalies**.
 
