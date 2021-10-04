@@ -97,7 +97,7 @@ analytics:
 author:
   name             : "Guilherme de Amorim"
   avatar           : "/images/bio-photo.jpg"
-  bio              : "ML_Engineer@MeLi"
+  bio              : "ML_Engineer@iFood"
   location         : "Sao Paulo, BR"
   email            : "ggimenezjr@gmail.com"
   links:
@@ -109,7 +109,7 @@ author:
       # url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "https://twitter.com/guimorg1"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
