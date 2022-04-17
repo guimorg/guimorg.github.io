@@ -6,7 +6,7 @@ lang: pt_BR
 ref: metaprogramming-101
 excerpt: Metaclasses e Metaprogramação em Python
 header:
-  image: "/images/metaprogramming/post.png"
+  overlay_image: "/images/metaprogramming/post.png"
 ---
 
 Antes de falarmos e entendermos mais sobre metaprogramação, que tal um pequeno "refresco" sobre o que são classes, objetos e metaclasses em Python?

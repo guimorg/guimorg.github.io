@@ -1,9 +1,16 @@
 ---
 header:
   overlay_image: "/images/theme.jpg"
-paginate: 5
+paginate: 20
 layout: archive
 author_profile: true
+feature_row:
+  - alt: "data bytes"
+    title: "🍪 Data Bytes"
+    excerpt: "Check out my collection of small blog posts about Data Science and Machine Learning!"
+    url: "/data-bytes/"
+    btn_class: "btn--primary"
+    btn_label: "Learn more"
 ---
 <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,6 +19,8 @@ author_profile: true
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+
+{% include feature_row %}
 
 <h3 class="archive__subtitle">Posts</h3>
 

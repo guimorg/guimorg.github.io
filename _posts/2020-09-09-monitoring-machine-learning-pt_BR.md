@@ -6,7 +6,7 @@ lang: pt_BR
 ref: quality-for-machine-learning-pt-1
 excerpt: Introdução a Qualidade para Machine Learning, pt. 1
 header:
-  image: "/images/monitoring-machine-learning/theme.jpeg"
+  overlay_image: "/images/monitoring-machine-learning/theme.jpeg"
 ---
 
 Nos últimos tempos um dos temas principais que tenho estudado e pensado sobre é Qualidade para aplicações e sistemas de Machine Learning. Lembro-me de há alguns poucos anos atrás, quando ingressei na área de ML, que não tinha ideia de como medir qualidade. Naquela época, eu estava começando a escrever meus primeiros testes unitários para aplicações WEB e já tinha uma primeira visão sobre o que era qualidade para Software em geral, mas quando contemplado com o conceito de ML eu não tinha ideia do que pensar ou o que procurar.

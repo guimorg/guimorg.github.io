@@ -34,7 +34,12 @@ layout: default
       {% endunless %}
 
       {% if page.bookauthor == null and page.permalink == null %}
-        {% assign versions=site.posts | where:"ref", page.ref | sort: 'lang' %}
+        {% if page.collection == "posts" %}
+          {% assign versions=site.posts | where:"ref", page.ref | sort: 'lang' %}
+        {% else %}
+          {% assign entries = site[page.collection] %}
+          {% assign versions=entries | where:"ref", page.ref | sort: 'lang' %}
+        {% endif %}
         {% if versions.size > 1 %}
           {% for version in versions %}
             {% if version.lang != page.lang %}

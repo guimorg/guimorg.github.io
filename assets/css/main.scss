@@ -27,9 +27,6 @@ This is what is currently in "_variables.scss" under the "Breakpoints" section:
 
 Override $max-width (don't forget the semicolon!):
 */
-$max-width: 100%;
-
-
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
