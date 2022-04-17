@@ -5,7 +5,7 @@ tags: [general]
 lang: en
 ref: hello-world
 header:
-  image: "/images/hello-world/hello-world.png"
+  overlay_image: "/images/hello-world/hello-world.png"
 ---
 
 # Hello World!

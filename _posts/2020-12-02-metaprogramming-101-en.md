@@ -6,7 +6,7 @@ lang: en
 ref: metaprogramming-101
 excerpt: Metaclasses and Metaprogramming in Python
 header:
-  image: "/images/metaprogramming/post.png"
+  overlay_image: "/images/metaprogramming/post.png"
 ---
 
 Before understanding what metaprogramming is, why don't we refresh a little bit about Python classes, objects, and metaclasses?

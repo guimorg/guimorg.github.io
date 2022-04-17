@@ -3,10 +3,10 @@ title: "Data Bytes - Concept Drift"
 tags: [machine learning, data]
 toc: true
 lang: pt_BR
-ref: data-bytes-concept-drift
+ref: concept-drift
 excerpt: Concept Drift - Data Bytes
 header:
-  image: "/images/data-bytes/concept-drift/post.png"
+  overlay_image: "/images/data-bytes/concept-drift/post.png"
 ---
 
 **Data Bytes** é uma série do blog que consiste em pequenas posts (ou *bytes*) que tentam explicar um assunto de uma forma bastante resumida - é quase uma introdução para te incentivar a aprender mais sobre.

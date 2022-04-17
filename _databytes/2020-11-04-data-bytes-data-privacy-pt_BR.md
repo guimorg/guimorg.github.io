@@ -3,10 +3,10 @@ title: "Data Bytes - Data Privacy"
 tags: [machine learning, data, privacy, ethics]
 toc: true
 lang: pt_BR
-ref: data-bytes-data-privacy
+ref: data-privacy
 excerpt: Um pouco de privacidade de Dados
 header:
-  image: "/images/data-bytes/data-privacy/theme.png"
+  overlay_image: "/images/data-bytes/data-privacy/theme.png"
 ---
 
 (Imagem tirada [daqui](https://www.bigcommerce.com/blog/consumer-data-privacy/))
