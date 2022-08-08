@@ -361,7 +361,7 @@ Mas, claro, existem alguns casos em que metaclasses e/ou metaprogramação são 
 
 #### De volta para Design Patterns: Singleton
 
-OK. Então você quer implemetar o pattern Singleton em Python. Mas como você faz isso? Eu realmente já vi alguns usos muito espertos de implementação de singletons utilizando arquivos separados (módulos) e sempre importando deste módulo. Mas o problema aqui é que o seu objeto Singleton não consegue ser instanciado de forma *lazy*.
+OK. Então você quer implemetar o [pattern Singleton](https://www.scaler.com/topics/singleton-design-pattern/) em Python. Mas como você faz isso? Eu realmente já vi alguns usos muito espertos de implementação de singletons utilizando arquivos separados (módulos) e sempre importando deste módulo. Mas o problema aqui é que o seu objeto Singleton não consegue ser instanciado de forma *lazy*.
 
 ```python
 #!/bin/env python3
